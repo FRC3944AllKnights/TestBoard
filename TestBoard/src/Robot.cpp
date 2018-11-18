@@ -52,7 +52,8 @@ public:
 private:
 	// Robot drive system
 	//frc::Spark m_left{0};
-	//frc::Spark m_right{1};	frc::DifferentialDrive m_robotDrive{m_left, m_right};
+	//frc::Spark m_right{1};
+	//frc::DifferentialDrive m_robotDrive{m_left, m_right};
 
 	frc::Joystick m_stick{0};
 	frc::LiveWindow& m_lw = *frc::LiveWindow::GetInstance();
