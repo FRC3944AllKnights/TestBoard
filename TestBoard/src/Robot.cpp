@@ -11,9 +11,13 @@
 #include <LiveWindow/LiveWindow.h>
 #include <Spark.h>
 #include <Timer.h>
+#include <ctre/Phoenix.h>
 
 class Robot : public frc::IterativeRobot {
 public:
+
+	WPI_TalonSRX * talon = new WPI_TalonSRX(4);
+
 	Robot() {
 		m_robotDrive.SetExpiration(0.1);
 		m_timer.Start();
@@ -42,13 +46,13 @@ public:
 		m_robotDrive.ArcadeDrive(m_stick.GetY(), m_stick.GetX());
 	}
 
+	// don't know what this is
 	void TestPeriodic() override {}
 
 private:
 	// Robot drive system
-	frc::Spark m_left{0};
-	frc::Spark m_right{1};
-	frc::DifferentialDrive m_robotDrive{m_left, m_right};
+	//frc::Spark m_left{0};
+	//frc::Spark m_right{1};	frc::DifferentialDrive m_robotDrive{m_left, m_right};
 
 	frc::Joystick m_stick{0};
 	frc::LiveWindow& m_lw = *frc::LiveWindow::GetInstance();
